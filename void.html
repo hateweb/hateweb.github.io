@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>
+      wipe the modern internet / hateweb
+    </title>
+    <link rel="stylesheet" type="text/css" href="//hateweb.github.io/style.css">
+  </head>
+  <body>
+    <div id="bar">
+      <div id="home">
+        <a class="homeorig" href="//hateweb.github.io/">hateweb</a>
+        <a class="homeedit" href="//hateweb.github.io/">h///eweb</a>
+      </div>
+      <span class="right">
+        <a href="mailto://hateweb@proton.me">hateweb@proton.me</a>
+      </span>
+    </div>
+    <div id="content">
+<p>jan 12 2026
+<h1>the neverending problems of void gnu/linux</h1>
+</p>
+<p>happy new year to everyone who's reading this.
+i have decided that my artix system has become way too stable. "new year, new distro!" i thought.
+void linux (glibc) seemed promising, since they're the people behind <em>runit</em>, a great init system. and believe me, the pid1 is one of the very few good things about this distro.
+since january 1st, i've been fighting all these problems, and some of them are just laughable for a modern linux system.</p>
+<h2>buildup</h2>
+<p>the live iso uses <em>dash</em> as the default shell, (which is not intended to be used as an interactive shell, as it doesn't have basic features like autocompletion), even though bash is preinstalled.</p>
+<p>the so-called <em>void-installer</em> has very little configuration available, and doesn't even let you configure encryption or the efi mountpoint. the installer shouldn't exist in the first place in such a distribution.</p>
+<p>there is a global system config at <em>/etc/rc.conf</em>, where you can set the timezone, hostname, etc., but the handbook explicitly tells to NOT use this config, and to configure these things the classic way. why does <em>/etc/rc.conf</em> exist?</p>
+<h2>culmination</h2>
+<p>there is an efibootstub hook that is supposed to eliminate the need for an external bootloader. it should automatically add an efi boot entry, but it keeps breaking all the time, so i just gave up completely on using that.
+the kernel and initramfs filenames are inconsistent (vmlinuz-x.x instead of vmlinuz), which is why the efibootstub hook exists in the first place. maybe you guys should just make the kernel have a persistent filename, just like every normal distribution does? not to mention the harm of writing to the motherboard's NVRAM every minor version bump. <a href="https://wiki.archlinux.org/title/EFI_boot_stub#efibootmgr">a proper operating system is supposed to create a boot entry once, and never change it.</a></p>
+<p>the <em>base</em> metapackage has a whole bunch of unnecessary packages, while the <em>base-minimal</em> metapackage is made for docker containers, and is strongly advised not to use on real hardware. the void maintainers recommend installing <em>base</em>, and then forcefully removing all the mess, and putting the unwanted packages into the <em>IgnorePkg</em> list. just like microsoft windows does it. we've come full circle, forcefully debloating linux DIY distributions now.</p>
+<p>the official software repos use <em>let's encrypt</em> for their ssl certificates, and i've already witnessed them expire, which is just an absolute joke for such a distro.</p>
+<h3>the biggest problem: software repositories</h3>
+<p>the repos barely have any packages and contain only the bare minimal for a working system, and there's no such thing as a centralized user repository. there is a separate repository, which requires building everything from source. there's no need for an explanation on how impractical that is. <a href="https://gentoo.org/">also gentoo exists.</a></p>
+<p>the repository maintainers remove or refuse to add packages because of personal hostility towards the developers of that software, making up insane reasons as to why they are not planning to add it. (hyprland)
+the <em>linux</em> package contains a 1.5 year old version of the kernel. why? "stability". funny enough, there is the <em>linux-lts</em> package for it, the whole goal of which is being stable. but if you want at least a relatively new version of the kernel, you'll need the <em>linux-baseline</em> package, the description of which says that this version is "for experts only". in a DIY distribution.</p>
+<h2>conclusion</h2>
+<p>void claims to be a "stable-rolling" release distribution (whatever that means), yet it's the least stable linux distribution i've used in quite a while. this false sense of "stability" makes using the distro an incredibly unpleasant experience.</p>
+<p>i probably forgot to mention at least a dozen other problems, which is why this may get some updates later.
+if you are willing to contibute to this article, <a href="mailto://hateweb@proton.me" title="hateweb[at]proton[dot]me">email me.</a></p>
+    </div>
+  </body>
+</html>
