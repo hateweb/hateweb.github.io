@@ -1,17 +1,19 @@
+
 <!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>
       wipe the modern internet / hateweb
     </title>
-    <link rel="stylesheet" type="text/css" href="//hateweb.github.io/style.css">
+    <link rel="stylesheet" type="text/css" href="styles.css">
   </head>
   <body>
     <div id="bar">
       <div id="home">
-        <a class="homeorig" href="//hateweb.github.io/">hateweb</a>
-        <a class="homeedit" href="//hateweb.github.io/">h///eweb</a>
+        <a class="homeorig" href="index.html">hateweb</a>
+        <a class="homeedit" href="index.html">h///eweb</a>
       </div>
       <span class="right">
         <a href="mailto:hateweb@proton.me">hateweb@proton.me</a>
@@ -36,8 +38,8 @@ the kernel and initramfs filenames are inconsistent (vmlinuz-x.x instead of vmli
 <p>the official software repos use <em>let's encrypt</em> for their ssl certificates, and i've already witnessed them expire, which is just an absolute joke for such a distro.</p>
 <h3>the biggest problem: software repositories</h3>
 <p>the repos barely have any packages and contain only the bare minimal for a working system, and there's no such thing as a centralized user repository. there is a separate repository, which requires building everything from source. there's no need for an explanation on how impractical that is. <a href="https://gentoo.org/">also gentoo exists.</a></p>
-<p>the repository maintainers remove or refuse to add packages because of personal hostility towards the developers of that software, making up insane reasons as to why they are not planning to add it. (hyprland)
-the <em>linux</em> package contains a 1.5 year old version of the kernel. why? "stability". funny enough, there is the <em>linux-lts</em> package for it, the whole goal of which is being stable. but if you want at least a relatively new version of the kernel, you'll need the <em>linux-baseline</em> package, the description of which says that this version is "for experts only". in a DIY distribution.</p>
+<p>the repository maintainers remove or refuse to add packages because of personal hostility towards the developers of that software, without any elaboration. (hyprland)
+the <em>linux</em> package contains a 1.5 year old version of the kernel. why? "stability". funny enough, there is the <em>linux-lts</em> package for it, the whole goal of which is being stable. but if you want at least a relatively new version of the kernel, you'll need the <em>linux-mainline</em> package, the description of which says that this version is "for experts only". in a DIY distribution.</p>
 <h2>conclusion</h2>
 <p>void claims to be a "stable-rolling" release distribution (whatever that means), yet it's the least stable linux distribution i've used in quite a while. this false sense of "stability" makes using the distro an incredibly unpleasant experience.</p>
 <p>i probably forgot to mention at least a dozen other problems, which is why this may get some updates later.
