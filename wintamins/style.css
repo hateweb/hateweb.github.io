@@ -1,6 +1,10 @@
 :root {
-  --bg-primary: #202020;
+  --bg-primary: #181818;
   --bg-secondary: #101010;
+  --fg-primary: #c0c0c0;
+  --fg-secondary: #bbbbbb;
+  --checker-one: #242424;
+  --checker-two: #202020;
   --bg-end: #1a1a1a;
   --bg-button: #191919;
   --bg-button-hover: #1d1d1d;
@@ -70,7 +74,7 @@ footer {
 
 .section-main {
 	/* background-color: var(--bg-primary); */
-	background-image: conic-gradient(#242424 0.25turn, #202020 0.25turn 0.5turn, #242424 0.5turn 0.75turn, #202020 0.75turn);
+	background-image: conic-gradient(var(--checker-one) 0.25turn, var(--checker-two) 0.25turn 0.5turn, var(--checker-one) 0.5turn 0.75turn, var(--checker-two) 0.75turn);
 	background-size: 128px 128px;
 /* background: repeating-linear-gradient( */
 /*     45deg, */
@@ -83,11 +87,13 @@ footer {
 
 .section-odd {
   background-color: var(--bg-secondary);
+  color: var(--fg-secondary);
   min-height: auto;
 }
 
 .section-even {
   background-color: var(--bg-primary);
+  color: var(--fg-primary);
   min-height: auto;
 }
 
