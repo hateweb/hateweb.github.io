@@ -1,0 +1,257 @@
+:root {
+  --bg-primary: #202020;
+  --bg-secondary: #101010;
+  --bg-end: #1a1a1a;
+  --bg-button: #191919;
+  --bg-button-hover: #1d1d1d;
+  --border-color: #404040;
+  --text-main: #ccc;
+  --text-muted: #888;
+  --text-white: #fff;
+  --text-hover: #ddd;
+}
+
+*, 
+*::before, 
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui;
+  background-color: var(--bg-end);
+  color: var(--text-main);
+  line-height: 1.5;
+  min-height: 100dvh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+
+h1 {
+  margin-bottom: 0;
+  color: var(--text-white);
+}
+
+p {
+  margin-top: 0;
+}
+
+#icon-text {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+}
+
+.grey {
+  color: var(--text-muted);
+}
+
+.section-header {
+	display: flex;
+	gap: 8px;
+	/* justify-content: space-between; */
+	align-items: center;
+}
+
+section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 40vh; /* Note: Change to 100vh or 100dvh if you want each section to span the exact height of the screen */
+  padding: 40px 20px;
+}
+
+footer {
+	margin-top: 20px;
+	margin-bottom: 20px;
+	text-align: center;
+}
+
+.section-main {
+	/* background-color: var(--bg-primary); */
+	background-image: conic-gradient(#242424 0.25turn, #202020 0.25turn 0.5turn, #242424 0.5turn 0.75turn, #202020 0.75turn);
+	background-size: 128px 128px;
+/* background: repeating-linear-gradient( */
+/*     45deg, */
+/*     #202020 0, */
+/*     #202020 25px, */
+/*     #242424 25px, */
+/*     #242424 50px */
+/*   ); */
+}
+
+.section-odd {
+  background-color: var(--bg-secondary);
+  min-height: auto;
+}
+
+.section-even {
+  background-color: var(--bg-primary);
+  min-height: auto;
+}
+
+.section-content {
+  width: 40em;
+
+  p {
+    font-size: 1.1em;
+  }
+
+  h1 {
+    font-size: 3em;
+  }
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.headermain {
+  display: flex;
+  align-items: flex-end;
+  gap: 4px;
+}
+
+.headericon {
+  width: 64px !important;
+  height: 64px !important;
+}
+
+.headerresize {
+  width: 64px !important;
+  height: 64px !important;
+  transform: rotate(90deg);
+}
+
+.icons {
+  display: flex;
+  align-items: flex-end;
+}
+
+.symbol {
+  width: 21px !important;
+  height: 21px !important;
+}
+
+.symbolsmall {
+  width: 18px !important;
+  height: 18px !important;
+}
+
+.selectable {
+	display: inline-flex;
+	align-items: center;
+	gap: 10px;
+}
+
+.icon {
+  display: flex;
+  align-items: flex-end;
+  width: 3em;
+  height: 3em;
+  padding: 0 10px 10px 0;
+  box-sizing: content-box;
+  image-rendering: pixelated;
+}
+
+/* Buttons */
+.btn-con {
+  display: flex;
+  padding-top: 0.5em;
+  gap: 10px;
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex: 0 0 calc(50% - 5px);
+  gap: 8px;
+  padding: 0.5em 1em;
+  background-color: var(--bg-button);
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+  color: var(--text-main);
+  font-size: 1.25em;
+  text-decoration: none;
+  transition: background-color 0.15s ease, color 0.15s ease;
+
+  &:hover {
+    background-color: var(--bg-button-hover);
+    color: var(--text-hover);
+  }
+}
+
+.split-btn-group {
+  display: flex;
+  flex: 0 0 calc(50% - 5px);
+  position: relative;
+
+  #btn-main {
+    flex: 1;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-right: none;
+    width: auto;
+  }
+
+  .btn-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5em 0.8em;
+    margin-left: -1px;
+    background-color: var(--bg-button);
+    border: 1px solid var(--border-color);
+    border-radius: 0 5px 5px 0;
+    color: var(--text-main);
+    cursor: pointer;
+    transition: background-color 0.15s ease, color 0.15s ease;
+
+    &:hover {
+      background-color: var(--bg-button-hover);
+      color: var(--text-hover);
+    }
+  }
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  margin-top: 5px;
+  background-color: var(--bg-button);
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+  z-index: 100;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+
+  &.show {
+    display: flex;
+    flex-direction: column;
+  }
+
+  a {
+    padding: 0.75em 1em;
+    color: var(--text-main);
+    text-decoration: none;
+    font-size: 1.1em;
+    border-bottom: 1px solid #303030;
+    transition: background-color 0.15s ease, color 0.15s ease;
+
+    &:last-child {
+      border-bottom: none;
+    }
+
+    &:hover {
+      background-color: var(--bg-button-hover);
+      color: var(--text-hover);
+    }
+  }
+}
