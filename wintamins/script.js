@@ -59,10 +59,10 @@ document.addEventListener('DOMContentLoaded', () => {
 		})
 		.then(textData => {
 			const time_elapsed = getRelativeElapsedTime(Number(textData.trim() + '000'));
-			document.getElementById('ver').textContent = time_elapsed;
+			document.getElementById('commit').textContent = time_elapsed;
 		})
 		.catch(error => {
-			document.getElementById('ver').textContent = '';
+			document.getElementById('commit').textContent = '';
 		});
 
 	const toggleBtn = document.querySelector('.btn-toggle');
